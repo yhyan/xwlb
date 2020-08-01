@@ -3,7 +3,6 @@
 
 import hashlib
 from time import time
-from itertools import izip
 from functools import wraps
 try:
     import cPickle as pickle
@@ -22,7 +21,7 @@ class BaseCache(object):
         return map(self.get, keys)
     
     def get_dict(self, *keys):
-        return dict(izip(keys, self.get_many(*keys)))
+        return dict(zip(keys, self.get_many(*keys)))
     
     def set(self, key, value, timeout=None):
         pass

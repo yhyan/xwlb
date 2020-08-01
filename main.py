@@ -54,7 +54,7 @@ class MainHandler(tornado.web.RequestHandler):
         page_obj = News.query.index_page().paginate(
             page=page, per_page=News.PER_PAGE)
         page_url = lambda page: self.request.uri[
-            :self.request.uri.find("?")] + "?%s" % urllib.urlencode(dict(page=page))
+            :self.request.uri.find("?")] + "?%s" % urllib.parse.urlencode(dict(page=page))
         self.render('index.html', page_obj=page_obj, page_url=page_url)
 
     def get(self, *args):

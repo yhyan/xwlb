@@ -63,7 +63,7 @@ def _wrap_with_default_query_class(fn):
 
 def _defines_primary_key(d):
     """Figures out if the given dictonary defines a primary key column."""
-    return any(v.primary_key for k, v in d.iteritems()
+    return any(v.primary_key for k, v in d.items()
                if isinstance(v, sqlalchemy.Column))
 
 
