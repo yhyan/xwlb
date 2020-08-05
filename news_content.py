@@ -53,7 +53,7 @@ def main(someday):
             db.session.add(o)
         except Exception as e:
             import traceback
-            print(traceback.format_exe())
+            print(traceback.format_exc())
     db.session.commit()
 
 
