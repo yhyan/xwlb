@@ -3,7 +3,6 @@
 import sys
 import datetime
 import simplejson
-import urllib2
 import MySQLdb
 
 import jieba

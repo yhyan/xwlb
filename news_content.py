@@ -3,7 +3,7 @@
 import sys
 import datetime
 import simplejson
-import urllib2
+import requests
 import MySQLdb
 from bs4 import BeautifulSoup  # pip install beautifulsoup4
 
@@ -14,7 +14,7 @@ S_TAG = '<!--repaste.body.begin-->'
 E_TAG = '<!--repaste.body.end-->'
 
 def get_soup(url):
-    html = urllib2.urlopen(url).read()
+    html = requests.get(url).text
     s = html.find(S_TAG)
     if s < 0:
         return None

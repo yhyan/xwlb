@@ -3,7 +3,7 @@
 import sys
 import datetime
 import simplejson
-import urllib2
+import requests
 import MySQLdb
 from bs4 import BeautifulSoup  # pip install beautifulsoup4
 
@@ -13,7 +13,7 @@ from models import News, db
 db.create_all()
 
 def get_soup(url):
-    html = urllib2.urlopen(url).read()
+    html = requests.get(url).text
     soup = BeautifulSoup(html)
     return soup
 
