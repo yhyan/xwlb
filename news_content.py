@@ -52,8 +52,8 @@ def main(someday):
             o.content = content.encode("utf8").decode("utf8")
             db.session.add(o)
         except Exception as e:
-            import trackback
-            print(trackback.format_exe())
+            import traceback
+            print(traceback.format_exe())
     db.session.commit()
 
 
