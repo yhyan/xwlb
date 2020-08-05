@@ -13,7 +13,7 @@ from models import News, db
 db.create_all()
 
 def get_soup(url):
-    html = requests.get(url).text
+    html = requests.get(url).content
     soup = BeautifulSoup(html)
     return soup
 

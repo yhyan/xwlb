@@ -14,7 +14,7 @@ S_TAG = '<!--repaste.body.begin-->'
 E_TAG = '<!--repaste.body.end-->'
 
 def get_soup(url):
-    html = requests.get(url).text
+    html = requests.get(url).content
     s = html.find(S_TAG)
     if s < 0:
         return None
