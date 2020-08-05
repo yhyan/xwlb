@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup  # pip install beautifulsoup4
 from models import News, db
 db.create_all()
 
-S_TAG = '<!--repaste.body.begin-->'
-E_TAG = '<!--repaste.body.end-->'
+S_TAG = b'<!--repaste.body.begin-->'
+E_TAG = b'<!--repaste.body.end-->'
 
 def get_soup(url):
     html = requests.get(url).content
